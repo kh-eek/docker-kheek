@@ -5,8 +5,10 @@ MAINTAINER Sida Say <sidasay@gmail.com>
 RUN mkdir /data
 WORKDIR /data
 
-# Clone repository
-RUN git clone git@gitlab.com:kheek/kheek.gitlab.io.git
+ADD Gemfile ./Gemfile
+ADD minimal-mistakes-jekyll.gemspec ./minimal-mistakes-jekyll.gemspec
+ADD package.json ./package.json
+ADD Rakefile ./Rakefile
 
 # Install bundle
 RUN bundle install
